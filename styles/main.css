@@ -1,0 +1,25 @@
+.content-box {
+  background-color: white;
+  border-radius: 5px;
+  padding: 20px;
+}
+
+body {
+  background-color: #8fb394;
+}
+
+.level {
+  background: darkgrey;
+  color: white;
+  padding: 5px;
+  border-radius: 5px;
+}
+
+.quantity {
+  background: darkgrey;
+  color: white;
+  padding: 5px;
+  border-radius: 5px;
+}
+
+/*# sourceMappingURL=main.css.map */

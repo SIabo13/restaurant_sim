@@ -1,0 +1,17 @@
+Restaurante game
+
+Game uses objects and classes to create restuarant employees and manage food inventory and 
+money. 
+
+You can hire employees or fire employees in between game rounds, also buy inventory. If you
+dont have enough money to play your employees an employee will quit. 
+
+The speed of the cooking is done asynchronously and effects your money made for that round.
+
+
+UI
+- Home many employees
+- Amount of money 
+- inventory
+- list of ingredients
+- food being made

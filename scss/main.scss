@@ -1,0 +1,24 @@
+@mixin small_box{
+    background: darkgrey;
+    color: white;
+    padding: 5px;
+    border-radius: 5px;
+}
+
+.content-box{
+    background-color: white;
+    border-radius: 5px;
+    padding: 20px;
+}
+
+body{
+    background-color: #8fb394;
+}
+
+.level{
+  @include small_box();
+}
+
+.quantity{
+    @include small_box();
+}
