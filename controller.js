@@ -6,43 +6,9 @@ import {employeeController} from './modules/employees.js'
 
 
 
-const controller = (function (data, dom, createChef,createPrep) {
-    const addInventory = () => {
-        let html;
-        for (const inventory in data.inventory) {
-            html = `<li class="list-group-item">${inventory}: <span class="level">QTY: ${data.inventory[inventory]}</span></li>`;
-            dom.inventoryList.innerHTML += html;
-        }
+const controller = (function (data, dom, createChef,createPrep,UImethods) {
 
-    }
-
-    const addRecipe = () => {
-        // let html;
-        // data.employees.forEach(element => {
-        //     console.log(element['name'] + ' ' + element['lvl'] + ' ' + element['job'])
-        //     html = `<li class="list-group-item">${element['job']}: ${element['name']} <span class="level">LVL: ${element['lvl']}</span></li>`;
-        //    dom.menu.innerHTML += html;
-        // });
-    }
-
-    const addEmployee = () => {
-        let html;
-        data.employees.forEach(element => {
-            console.log(element['firstName'] + ' ' + element['lastName'] + ' ' + element['lvl'] + ' ' + element['title'])
-            html = `<li class="list-group-item">${element['job']}: ${element['name']} <span class="level">LVL: ${element['lvl']}</span></li>`;
-            dom.employeeList.innerHTML += html;
-        });
-
-    }
-
-    const addEmployeeForHire = () =>{
-        data.employeesForHire.forEach(element => {
-            console.log(element['firstName'] + ' ' + element['lastName'] + ' ' + element['lvl'] + ' ' + element['title'])
-            html = `<li class="list-group-item">${element['job']}: ${element['name']} <span class="level">LVL: ${element['lvl']}</span></li>`;
-            dom.hireList.innerHTML += html;
-        });
-    }
-
+    
     const playersLevels = () => {
         // Checks players level and sets work time based on levels
     }
@@ -123,8 +89,9 @@ const controller = (function (data, dom, createChef,createPrep) {
             createRandomChef();
             createRandomPrep();
             
+            
       }
-
+      UImethods.addEmployeeForHire(data.employeesForHire);
       console.log(data.employeesForHire)
         
     }
@@ -151,8 +118,8 @@ const controller = (function (data, dom, createChef,createPrep) {
 
     const init = () => {
         
-        addInventory();
-        addEmployee();
+        UImethods.addInventory(data.employeesForHire);
+        UImethods.addEmployee(data.employees);
     }
 
     dom.hireBtn.addEventListener('click',employeeGenerator);
@@ -163,7 +130,7 @@ const controller = (function (data, dom, createChef,createPrep) {
         init: init
     }
 
-})(modelController.data, UIController.DOM,employeeController.createChef,employeeController.createPrep);
+})(modelController.data, UIController.DOM,employeeController.createChef,employeeController.createPrep,UIController);
 
 
 controller.init();
